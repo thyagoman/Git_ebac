@@ -1,0 +1,40 @@
+package matrizes;
+import java.util.*;
+
+public class Main {
+public static void main(String[] args) {
+Scanner scanner = new Scanner(System.in);
+int N = scanner.nextInt();
+       
+    
+        int[] palpites = new int[N];
+        int[] erros = new int[N];
+
+        for (int i = 0; i < N; i++) {
+            palpites[i] = scanner.nextInt();
+        }
+
+        for (int i = 0; i < N; i++) {
+            erros[i] = scanner.nextInt();
+        }
+
+        Set<Integer> possiveisValores = new HashSet<>();
+
+        for (int i = 0; i < N; i++) {
+            possiveisValores.add(palpites[i] - erros[i]);
+            possiveisValores.add(palpites[i] + erros[i]);
+        }
+
+        List<Integer> sortedValues = new ArrayList<>(possiveisValores);
+        Collections.sort(sortedValues);
+
+        for (int valor : sortedValues) {
+            System.out.println(valor);
+        }
+    }
+          
+  }
+        
+	
+
+

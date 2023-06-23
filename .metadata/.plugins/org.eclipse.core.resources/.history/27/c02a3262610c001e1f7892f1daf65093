@@ -1,0 +1,32 @@
+package matrizes;
+import java.util.Scanner;
+
+public class SomaMatriz {
+	public static void main(String[]args) {
+		Scanner input = new Scanner(System.in);
+		
+		int N = input.nextInt();
+		int soma = 0;
+		int coluna = 0;
+		
+		int [][] mat = new int[N][N];
+		
+		for(int i = 0; i < N; i++) {
+			for(int j = 0; j < N; j++) {
+				mat [i][j] = input.nextInt();
+				
+			}
+		}
+		for(int i = 0; i < N; i++) {
+			for(int j = 0; j < N; j++) {
+				soma += mat[i][j];
+				
+			}
+			coluna++;
+			System.out.print("Linha "+i+" Coluna "+coluna+"  "+soma+" ");
+		}
+		
+		
+	}
+
+}

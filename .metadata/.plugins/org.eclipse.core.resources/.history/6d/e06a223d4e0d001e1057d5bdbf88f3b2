@@ -1,0 +1,52 @@
+package matrizes;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+       double soma = 0;
+       int contagem = 0;
+       double media = 0; 
+        
+       int L = input.nextInt();
+       char selecao = input.next().charAt(0);
+       
+       
+       double [][] matrix = new double[2][2];
+       
+       for (int i = 0;i < matrix.length;i++) {
+    	   for(int j = 0;j < matrix[i].length;i++) {
+    		   matrix[i][j] = input.nextDouble();  
+    	   }
+       }
+       
+       for (int i = 0;i < matrix.length;i++) {
+    	   for(int j = 0;j < matrix.length;i++) {
+    		   if(i == L) {
+    			   soma += matrix[i][j];
+    			   contagem++;
+    		   }
+    		   
+    	   }
+       }
+       
+       if(selecao == 'S') {
+    	   System.out.printf("%.1f%n",soma);
+       }
+       else if(selecao == 'M') {
+    	   media = soma /contagem;
+    	   System.out.printf("%.1f%n",media);
+       }
+       
+       
+       
+       
+       
+       
+        input.close();
+    }
+}
+	
+
+
